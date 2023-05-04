@@ -1,0 +1,35 @@
+.side-menu-nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 $fold-size * 4;
+  padding: $fold-size * 3 $fold-size * 6;
+  overflow: hidden;
+  color: #85858d;
+  font-weight: 300;
+  font-size: $fold-size * 7;
+  line-height: 1.2;
+  text-decoration: none;
+  border-radius: $fold-size * 5;
+  cursor: pointer;
+  transition: background-color 0.3s linear;
+
+  &:hover {
+    color: #85858d;
+    background-color: $color-gray-lighten;
+  }
+
+  &--isActive {
+    background-color: $color-gray-lighten;
+
+    &::before {
+      width: $fold-size;
+    }
+  }
+
+  &__icon {
+    width: $fold-size * 6 !important;
+    margin-right: $fold-size * 4;
+    text-align: center;
+  }
+}

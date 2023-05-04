@@ -1,0 +1,20 @@
+.side-menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__navigation {
+    padding-top: $fold-size * 7;
+    animation: $animation-fade-in;
+  }
+
+  &__nav-group:not(:nth-last-child(1)) {
+    margin-bottom: $fold-size * 3;
+  }
+
+  &__footer {
+    flex-shrink: 0;
+    margin-top: auto;
+  }
+}

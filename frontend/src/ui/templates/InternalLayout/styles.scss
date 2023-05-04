@@ -1,0 +1,70 @@
+.internal-layout {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  height: 95vh;
+  margin: 2.5vh auto;
+  overflow: hidden;
+  width: 98vw;
+  &__content {
+    position: relative;
+    grid-area: cnt;
+    padding: $fold-size * 6 $fold-size * 7;
+    background-color: #f6f7f9;
+    border-radius: 30px;
+    width: 100%;
+
+    @include media-tablet {
+      padding: $fold-size * 5;
+    }
+
+    @include media-mobile {
+      padding: $fold-size * 5 $fold-size * 3;
+    }
+  }
+
+  &--menu-hidden {
+    .internal-layout__content {
+      padding-right: $fold-size * 8;
+      padding-left: $fold-size * 8;
+
+      @include media-tablet {
+        padding-right: $fold-size * 5;
+        padding-left: $fold-size * 5;
+      }
+
+      @include media-mobile {
+        padding-right: $fold-size * 3;
+        padding-left: $fold-size * 3;
+      }
+    }
+  }
+
+  &__header {
+    z-index: 4;
+    grid-area: hdr;
+  }
+
+  &__side-menu-mask {
+    grid-area: mnu;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    transition: width 0.3s linear;
+
+    &--visible {
+      width: $menu-width;
+    }
+
+    @include media-tablet {
+      position: absolute;
+      z-index: 3;
+    }
+  }
+
+  &__side-menu {
+    width: $menu-width;
+    height: inherit;
+  }
+}
